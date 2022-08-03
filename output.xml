@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220725 08:58:56.583" rpa="false" schemaversion="3">
+<suite id="s1" name="Test-Case" source="E:\Estudo QA v2\test-case">
+<suite id="s1-s1" name="Testar Browser" source="E:\Estudo QA v2\test-case\testar_browser.robot">
+<test id="s1-s1-t1" name="Cenário 1 - Abrir Google" line="8">
+<kw name="Dado que o browser esteja aberto" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url:blank</arg>
+<arg>googlechrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220725 08:58:56.905" level="INFO">Opening browser 'googlechrome' to base url 'url:blank'.</msg>
+<status status="PASS" starttime="20220725 08:58:56.905" endtime="20220725 08:58:58.333"/>
+</kw>
+<status status="PASS" starttime="20220725 08:58:56.904" endtime="20220725 08:58:58.333"/>
+</kw>
+<kw name="Quando acesso a página do Google" library="home">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://www.google.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220725 08:58:58.334" level="INFO">Opening url 'http://www.google.com'</msg>
+<status status="PASS" starttime="20220725 08:58:58.334" endtime="20220725 08:58:59.429"/>
+</kw>
+<status status="PASS" starttime="20220725 08:58:58.334" endtime="20220725 08:58:59.430"/>
+</kw>
+<kw name="Então confirmo que a página do Google está aberta" library="home">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Google</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220725 08:58:59.434" level="INFO">Page title is 'Google'.</msg>
+<status status="PASS" starttime="20220725 08:58:59.430" endtime="20220725 08:58:59.434"/>
+</kw>
+<status status="PASS" starttime="20220725 08:58:59.430" endtime="20220725 08:58:59.434"/>
+</kw>
+<status status="PASS" starttime="20220725 08:58:56.904" endtime="20220725 08:58:59.434"/>
+</test>
+<test id="s1-s1-t2" name="Cenário 2 - Realizar Consulta Padrinho" line="15">
+<kw name="Dado que estou na página do Google" library="home">
+<kw name="Então confirmo que a página do Google está aberta" library="home">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Google</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220725 08:58:59.444" level="INFO">Page title is 'Google'.</msg>
+<status status="PASS" starttime="20220725 08:58:59.437" endtime="20220725 08:58:59.444"/>
+</kw>
+<status status="PASS" starttime="20220725 08:58:59.437" endtime="20220725 08:58:59.444"/>
+</kw>
+<status status="PASS" starttime="20220725 08:58:59.436" endtime="20220725 08:58:59.445"/>
+</kw>
+<kw name="Quando consulto a palavra Padrinho" library="home">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME_INPUT_PESQUISA}</arg>
+<arg>Padrinho</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220725 08:58:59.446" level="INFO">Typing text 'Padrinho' into text field '//*[@class="gLFyf gsfi"]'.</msg>
+<status status="PASS" starttime="20220725 08:58:59.445" endtime="20220725 08:58:59.545"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220725 08:58:59.545" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg timestamp="20220725 08:58:59.545" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg timestamp="20220725 08:58:59.545" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220725 08:58:59.545" endtime="20220725 08:59:00.799"/>
+</kw>
+<status status="PASS" starttime="20220725 08:58:59.445" endtime="20220725 08:59:00.799"/>
+</kw>
+<kw name="Então deve apresentar os resultados referentes a palavra Padrinho" library="home">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${HOME_RESULT_PESQUISA}</arg>
+<arg>padrinho</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220725 08:59:00.801" level="INFO">Verifying element '//*[@data-dobid="hdw"]' contains exact text 'padrinho'.</msg>
+<status status="PASS" starttime="20220725 08:59:00.800" endtime="20220725 08:59:00.837"/>
+</kw>
+<status status="PASS" starttime="20220725 08:59:00.800" endtime="20220725 08:59:00.837"/>
+</kw>
+<status status="PASS" starttime="20220725 08:58:59.436" endtime="20220725 08:59:00.838"/>
+</test>
+<kw name="Fechar Navegador" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220725 08:59:00.841" endtime="20220725 08:59:03.633"/>
+</kw>
+<status status="PASS" starttime="20220725 08:59:00.839" endtime="20220725 08:59:03.633"/>
+</kw>
+<status status="PASS" starttime="20220725 08:58:56.608" endtime="20220725 08:59:03.633"/>
+</suite>
+<status status="PASS" starttime="20220725 08:58:56.584" endtime="20220725 08:59:03.635"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Test-Case">Test-Case</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Testar Browser">Test-Case.Testar Browser</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
