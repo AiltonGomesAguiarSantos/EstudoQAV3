@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220802 09:00:47.589" rpa="false" schemaversion="3">
+<suite id="s1" name="Test-Case" source="E:\Estudo QA v2\test-case">
+<suite id="s1-s1" name="Shop Reset Pass" source="E:\Estudo QA v2\test-case\shop_reset_pass.robot">
+<kw name="Dado que o browser esteja aberto" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url:blank</arg>
+<arg>googlechrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220802 09:00:48.751" level="INFO">Opening browser 'googlechrome' to base url 'url:blank'.</msg>
+<status status="PASS" starttime="20220802 09:00:48.750" endtime="20220802 09:00:50.554"/>
+</kw>
+<status status="PASS" starttime="20220802 09:00:48.750" endtime="20220802 09:00:50.555"/>
+</kw>
+<test id="s1-s1-t1" name="Cenário 2 - Reset de Senha por e-mail" line="21">
+<kw name="Dado que estou na tela de acesso" library="shop_resetpassword">
+<kw name="Dado que tenho uma tela para criar acesso" library="shop_myaccount">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://shop.demoqa.com/my-account/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220802 09:00:50.561" level="INFO">Opening url 'https://shop.demoqa.com/my-account/'</msg>
+<status status="PASS" starttime="20220802 09:00:50.560" endtime="20220802 09:00:55.972"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Account – ToolsQA Demo Site</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220802 09:00:55.980" level="INFO">Page title is 'My Account – ToolsQA Demo Site'.</msg>
+<status status="PASS" starttime="20220802 09:00:55.972" endtime="20220802 09:00:55.980"/>
+</kw>
+<status status="PASS" starttime="20220802 09:00:50.558" endtime="20220802 09:00:55.980"/>
+</kw>
+<status status="PASS" starttime="20220802 09:00:50.558" endtime="20220802 09:00:55.980"/>
+</kw>
+<kw name="e escolho a opção de Lost your password?" library="shop_resetpassword">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LINK_LOST_PASSWORD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220802 09:00:55.982" level="INFO">Clicking element '//*[@href="https://shop.demoqa.com/my-account/lost-password/"]'.</msg>
+<status status="PASS" starttime="20220802 09:00:55.981" endtime="20220802 09:00:57.868"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${PAGINA_RESET_PASSWORD}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220802 09:00:57.977" level="INFO">Element '//p[contains(.,'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.')]' is displayed.</msg>
+<status status="PASS" starttime="20220802 09:00:57.868" endtime="20220802 09:00:57.977"/>
+</kw>
+<status status="PASS" starttime="20220802 09:00:55.981" endtime="20220802 09:00:57.977"/>
+</kw>
+<kw name="e insiro a informação de e-mail" library="shop_resetpassword">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME_INPUT_USUARIO}</arg>
+<arg>padrinho@dac.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220802 09:00:57.979" level="INFO">Typing text 'padrinho@dac.com' into text field '//*[@id="user_login"]'.</msg>
+<status status="PASS" starttime="20220802 09:00:57.979" endtime="20220802 09:00:58.107"/>
+</kw>
+<status status="PASS" starttime="20220802 09:00:57.978" endtime="20220802 09:00:58.107"/>
+</kw>
+<kw name="Quando clico em reset password" library="shop_resetpassword">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTTON_RESET_SENHA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220802 09:00:58.109" level="INFO">Clicking element '//*[@class="woocommerce-Button button"]'.</msg>
+<status status="PASS" starttime="20220802 09:00:58.108" endtime="20220802 09:01:00.303"/>
+</kw>
+<status status="PASS" starttime="20220802 09:00:58.108" endtime="20220802 09:01:00.303"/>
+</kw>
+<kw name="Então é apresentado a mensagem de que o reset foi realizado e enviado e-mail" library="shop_resetpassword">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VALIDAR_RESET_SENHA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220802 09:01:00.336" level="INFO">Element '//p[contains(.,'A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.')]' is displayed.</msg>
+<status status="PASS" starttime="20220802 09:01:00.304" endtime="20220802 09:01:00.336"/>
+</kw>
+<status status="PASS" starttime="20220802 09:01:00.304" endtime="20220802 09:01:00.336"/>
+</kw>
+<status status="PASS" starttime="20220802 09:00:50.555" endtime="20220802 09:01:00.337"/>
+</test>
+<kw name="Fechar Navegador" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220802 09:01:00.340" endtime="20220802 09:01:02.606"/>
+</kw>
+<status status="PASS" starttime="20220802 09:01:00.339" endtime="20220802 09:01:02.607"/>
+</kw>
+<status status="PASS" starttime="20220802 09:00:47.625" endtime="20220802 09:01:02.607"/>
+</suite>
+<status status="PASS" starttime="20220802 09:00:47.592" endtime="20220802 09:01:02.609"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test-Case">Test-Case</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Shop Reset Pass">Test-Case.Shop Reset Pass</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220802 09:00:47.635" level="ERROR">Error in file 'E:\Estudo QA v2\resource\po\shop_resetpassword.robot' on line 35: Creating keyword '[Documentation]' failed: Keyword with same name defined multiple times.</msg>
+</errors>
+</robot>
