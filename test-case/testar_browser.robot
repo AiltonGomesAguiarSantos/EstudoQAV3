@@ -19,6 +19,6 @@ Cenário 2 - Realizar Consulta Padrinho
     Então deve apresentar os resultados referentes a palavra Padrinho
 
 
-Cenário 3 - 
+
     
 

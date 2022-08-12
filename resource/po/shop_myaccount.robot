@@ -27,7 +27,7 @@ Quando Insiro os dados de usuário, senha e e-mail
 
 Então é criado o usuário
         Title Should Be         Log In ‹ ToolsQA Demo Site — WordPress
-        Close Browser
+        
 
 Dado que estou na tela para criar registro de usuário
         Go to       https://shop.demoqa.com/my-account/
