@@ -8,6 +8,9 @@ ${HOME_INPUT_SEARCH}                //*[@class="noo-search"]
 ${HOME_INPUT_SEARCH_QA}             //*[@class="note-search"]
 ${HOME_INPUT_CONSULTA}              //*[@class="form-control"]
 ${HOME_INPUT_RESULTADO_CONSULTA}    //*[@class="woocommerce-result-count"]
+${HOME_INPUT_SEARCH_t-SHIRT}        //*[@class="page-title"]
+${HOME_RETURN_SEARCH_PRODUTOS_RELACIONADO}      //*[@class="title-related"]
+${HOME_RETURN_SEARCH_PRODUTO_NAO_ENCONTRADO}        //*[@class="woocommerce-info"]
 
 ***Keywords***
 
@@ -33,4 +36,25 @@ Quando digito a texto Dress
 Então após dar Enter é apresentado os resultados de buscas
     Press Keys      none                            RETURN
     Element Should Contain              ${HOME_INPUT_RESULTADO_CONSULTA}    Showing
-             
+
+
+Dado que apresentou a opção para digitar o produto a ser consultado
+    Click Element                       ${HOME_INPUT_SEARCH}
+
+Quando digito a texto T-Shirt
+    Input Text                          ${HOME_INPUT_CONSULTA}      T-Shirt
+    Press Keys      none                            RETURN
+
+Então após dar Enter é apresentado um único resultado em evidência
+    Element Text Should Be              ${HOME_INPUT_SEARCH_t-SHIRT}    BLACK LUX GRAPHIC T-SHIRT
+
+Então após dar Enter é apresentado um único resultado e abaixo as opções de produtos relacionados
+    Element Text Should Be              ${HOME_RETURN_SEARCH_PRODUTOS_RELACIONADO}    RELATED PRODUCTS
+
+Quando digito a texto Camisa
+    Input Text                          ${HOME_INPUT_CONSULTA}      CAMISA
+    Press Keys      none                            RETURN
+
+
+Então após dar Enter é apresentado a mensagem de que não foi encontrado produto   
+    Element Text Should Be              ${HOME_RETURN_SEARCH_PRODUTO_NAO_ENCONTRADO}    No products were found matching your selection.
