@@ -1,92 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220812 08:58:42.615" rpa="false" schemaversion="3">
-<suite id="s1" name="Shop Login" source="C:\padrinho\EstudoQAV3\test-case\shop_login.robot">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220823 21:22:34.328" rpa="false" schemaversion="3">
+<suite id="s1" name="Itens Shop" source="E:\EstudoQAV4\EstudoQAV3\test-case\itens_shop.robot">
 <kw name="Dado que o browser esteja aberto" library="resource" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>url:blank</arg>
 <arg>googlechrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220812 08:58:43.415" level="INFO">Opening browser 'googlechrome' to base url 'url:blank'.</msg>
-<status status="PASS" starttime="20220812 08:58:43.415" endtime="20220812 08:58:45.875"/>
+<msg timestamp="20220823 21:22:35.085" level="INFO">Opening browser 'googlechrome' to base url 'url:blank'.</msg>
+<status status="PASS" starttime="20220823 21:22:35.085" endtime="20220823 21:22:36.254"/>
 </kw>
-<status status="PASS" starttime="20220812 08:58:43.415" endtime="20220812 08:58:45.875"/>
+<status status="PASS" starttime="20220823 21:22:35.085" endtime="20220823 21:22:36.254"/>
 </kw>
-<test id="s1-t1" name="Cenário 5 - Negar acesso para senha que tenha apenas 3 caracteres" line="38">
-<kw name="Dado que estou na tela para logar" library="shop_logar">
+<test id="s1-t1" name="Cenário 1 - Confirmar se o produto é apresentado" line="12">
+<kw name="Dado que realizei a consulta de “Dress” no campo de pesquisa E apresentou produtos a serem escolhidos" library="validacao_itens_shopqa">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220823 21:22:36.258" endtime="20220823 21:22:36.379"/>
+</kw>
 <kw name="Go To" library="SeleniumLibrary">
-<arg>https://shop.demoqa.com/my-account/</arg>
+<arg>https://shop.demoqa.com/</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220812 08:58:45.885" level="INFO">Opening url 'https://shop.demoqa.com/my-account/'</msg>
-<status status="PASS" starttime="20220812 08:58:45.884" endtime="20220812 08:58:50.191"/>
+<msg timestamp="20220823 21:22:36.380" level="INFO">Opening url 'https://shop.demoqa.com/'</msg>
+<status status="PASS" starttime="20220823 21:22:36.379" endtime="20220823 21:22:41.251"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
-<arg>My Account – ToolsQA Demo Site</arg>
+<arg>ToolsQA Demo Site – ToolsQA – Demo E-Commerce Site</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220812 08:58:50.199" level="INFO">Page title is 'My Account – ToolsQA Demo Site'.</msg>
-<status status="PASS" starttime="20220812 08:58:50.191" endtime="20220812 08:58:50.199"/>
+<msg timestamp="20220823 21:22:41.256" level="INFO">Page title is 'ToolsQA Demo Site – ToolsQA – Demo E-Commerce Site'.</msg>
+<status status="PASS" starttime="20220823 21:22:41.251" endtime="20220823 21:22:41.256"/>
 </kw>
-<status status="PASS" starttime="20220812 08:58:45.883" endtime="20220812 08:58:50.199"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME_INPUT_SEARCH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220823 21:22:41.256" endtime="20220823 21:22:41.278"/>
 </kw>
-<kw name="Quando Insiro os dados de usuário &quot;teste1903&quot; e senha &quot;123&quot;" library="shop_logar" sourcename="Quando Insiro os dados de usuário &quot;${usuario}&quot; e senha &quot;${senha}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_INPUT_SEARCH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220823 21:22:41.278" level="INFO">Clicking element '//*[@class="noo-search"]'.</msg>
+<status status="PASS" starttime="20220823 21:22:41.278" endtime="20220823 21:22:41.318"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${HOME_INPUT_SEARCH_QA}</arg>
+<arg>TYPE AND PRESS ENTER TO SEARCH</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220823 21:22:41.318" level="INFO">Verifying element '//*[@class="note-search"]' contains exact text 'TYPE AND PRESS ENTER TO SEARCH'.</msg>
+<status status="PASS" starttime="20220823 21:22:41.318" endtime="20220823 21:22:41.349"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME_INPUT_CONSULTA}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220823 21:22:41.349" endtime="20220823 21:22:41.369"/>
+</kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${LOGIN_INPUT_USUARIO}</arg>
-<arg>${usuario}</arg>
+<arg>${HOME_INPUT_CONSULTA}</arg>
+<arg>Dress</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220812 08:58:50.202" level="INFO">Typing text 'teste1903' into text field '//*[@id="username"]'.</msg>
-<status status="PASS" starttime="20220812 08:58:50.200" endtime="20220812 08:58:50.278"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${LOGIN_INPUT_SENHA}</arg>
-<arg>${senha}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220812 08:58:50.278" level="INFO">Typing text '123' into text field '//*[@id="password"]'.</msg>
-<status status="PASS" starttime="20220812 08:58:50.278" endtime="20220812 08:58:50.346"/>
+<msg timestamp="20220823 21:22:41.369" level="INFO">Typing text 'Dress' into text field '//*[@class="form-control"]'.</msg>
+<status status="PASS" starttime="20220823 21:22:41.369" endtime="20220823 21:22:41.421"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>none</arg>
 <arg>RETURN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220812 08:58:50.346" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
-<msg timestamp="20220812 08:58:50.346" level="INFO">Pressing special key RETURN to browser.</msg>
-<msg timestamp="20220812 08:58:50.346" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20220812 08:58:50.346" endtime="20220812 08:58:52.678"/>
+<msg timestamp="20220823 21:22:41.422" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg timestamp="20220823 21:22:41.422" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg timestamp="20220823 21:22:41.422" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220823 21:22:41.422" endtime="20220823 21:22:41.987"/>
 </kw>
-<status status="PASS" starttime="20220812 08:58:50.200" endtime="20220812 08:58:52.678"/>
+<status status="PASS" starttime="20220823 21:22:36.257" endtime="20220823 21:22:41.987"/>
 </kw>
-<kw name="Então é apresentado a informação que a usuário não existe" library="shop_logar">
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${LOGIN_RESULT_ERROR}</arg>
-<arg>ERROR</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20220812 08:58:52.712" level="INFO">Element '//*[@class="woocommerce-error"]' is displayed.</msg>
-<status status="PASS" starttime="20220812 08:58:52.679" endtime="20220812 08:58:52.712"/>
+<kw name="Quando seleciono o produto" library="validacao_itens_shopqa">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${RESULTADOS_SELECIONAR_PRODUTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220823 21:22:41.988" level="INFO">Clicking element '//*[@href="https://shop.demoqa.com/product/white-milkmaid-hook-and-eye-bodycon-midi-dress/"]'.</msg>
+<status status="PASS" starttime="20220823 21:22:41.988" endtime="20220823 21:22:43.308"/>
 </kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220812 08:58:52.887" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220812 08:58:52.712" endtime="20220812 08:58:52.887"/>
+<status status="PASS" starttime="20220823 21:22:41.988" endtime="20220823 21:22:43.308"/>
 </kw>
-<status status="PASS" starttime="20220812 08:58:52.679" endtime="20220812 08:58:52.887"/>
+<kw name="Então é apresentado as informações do produto" library="validacao_itens_shopqa">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${ESPECIFICACAO_PRODUTO}</arg>
+<arg>a white midi dress in a milkmaid style featuring puff detail sleeves and split on the reverse.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220823 21:22:43.309" level="INFO">Verifying element '//*[@class="product-essential__description"]' contains exact text 'a white midi dress in a milkmaid style featuring puff detail sleeves and split on the reverse.'.</msg>
+<status status="PASS" starttime="20220823 21:22:43.309" endtime="20220823 21:22:43.330"/>
 </kw>
-<status status="PASS" starttime="20220812 08:58:45.876" endtime="20220812 08:58:52.888"/>
+<status status="PASS" starttime="20220823 21:22:43.308" endtime="20220823 21:22:43.330"/>
+</kw>
+<status status="PASS" starttime="20220823 21:22:36.255" endtime="20220823 21:22:43.330"/>
+</test>
+<test id="s1-t2" name="Cenário 3 - Escolhendo o tipo de tamanho do produto" line="20">
+<kw name="Quando clico na opção de tamanho" library="validacao_itens_shopqa">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ESCOLHENDO_TAMANHO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220823 21:22:43.332" level="INFO">Clicking element '//*[@id="pa_size"]'.</msg>
+<status status="PASS" starttime="20220823 21:22:43.332" endtime="20220823 21:22:43.383"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ESCOLHENDO_TAMANHO_MEDIUM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220823 21:22:43.384" level="INFO">Clicking element '//*[@value="medium"]'.</msg>
+<status status="PASS" starttime="20220823 21:22:43.383" endtime="20220823 21:22:43.420"/>
+</kw>
+<status status="PASS" starttime="20220823 21:22:43.332" endtime="20220823 21:22:43.420"/>
+</kw>
+<kw name="Então é apresentado as opções de escolha de tamanho" library="validacao_itens_shopqa">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${ESCOLHENDO_TAMANHO_MEDIUM}</arg>
+<arg>Medium</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220823 21:22:43.421" level="INFO">Verifying element '//*[@value="medium"]' contains exact text 'Medium'.</msg>
+<status status="PASS" starttime="20220823 21:22:43.421" endtime="20220823 21:22:43.440"/>
+</kw>
+<status status="PASS" starttime="20220823 21:22:43.420" endtime="20220823 21:22:43.440"/>
+</kw>
+<status status="PASS" starttime="20220823 21:22:43.331" endtime="20220823 21:22:43.440"/>
+</test>
+<test id="s1-t3" name="Cenário 2 - Escolhendo o tipo de cor do produto" line="27">
+<kw name="Quando clico na opção de cor" library="validacao_itens_shopqa">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ESCOLHENDO_COR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220823 21:22:43.443" level="INFO">Clicking element '//*[@id="pa_color"]'.</msg>
+<status status="PASS" starttime="20220823 21:22:43.443" endtime="20220823 21:22:43.517"/>
+</kw>
+<status status="PASS" starttime="20220823 21:22:43.442" endtime="20220823 21:22:43.517"/>
+</kw>
+<kw name="Então é apresentado as opções de escolha de cor E quando seleciono a cor é apresentado a foto com a cor escolhida" library="validacao_itens_shopqa">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ESCOLHENDO_COR_WHITE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220823 21:22:43.519" level="INFO">Clicking element '//*[@value="white"]'.</msg>
+<status status="PASS" starttime="20220823 21:22:43.518" endtime="20220823 21:22:43.591"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${ESCOLHENDO_COR_WHITE}</arg>
+<arg>White</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220823 21:22:43.591" level="INFO">Verifying element '//*[@value="white"]' contains exact text 'White'.</msg>
+<status status="PASS" starttime="20220823 21:22:43.591" endtime="20220823 21:22:43.634"/>
+</kw>
+<status status="PASS" starttime="20220823 21:22:43.518" endtime="20220823 21:22:43.634"/>
+</kw>
+<status status="PASS" starttime="20220823 21:22:43.442" endtime="20220823 21:22:43.635"/>
 </test>
 <kw name="Fechar Navegador" library="resource" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220812 08:58:52.890" endtime="20220812 08:58:55.520"/>
+<status status="PASS" starttime="20220823 21:22:43.638" endtime="20220823 21:22:45.932"/>
 </kw>
-<status status="PASS" starttime="20220812 08:58:52.890" endtime="20220812 08:58:55.520"/>
+<status status="PASS" starttime="20220823 21:22:43.638" endtime="20220823 21:22:45.932"/>
 </kw>
-<status status="PASS" starttime="20220812 08:58:42.617" endtime="20220812 08:58:55.520"/>
+<status status="PASS" starttime="20220823 21:22:34.329" endtime="20220823 21:22:45.932"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Shop Login">Shop Login</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="Itens Shop">Itens Shop</stat>
 </suite>
 </statistics>
 <errors>
