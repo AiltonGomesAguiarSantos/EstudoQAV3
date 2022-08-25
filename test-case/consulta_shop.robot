@@ -29,8 +29,6 @@ Cenário 3 - Efetuar Consulta de único Resultado
    Então após dar Enter é apresentado um único resultado em evidência
    E após dar Enter é apresentado um único resultado e abaixo as opções de produtos relacionados
 
-
-
 Cenário 5 – Efetuar Consulta de produto inexistente
 
    Dado que apresentou a opção para digitar o produto a ser consultado

@@ -15,6 +15,14 @@ ${ESCOLHENDO_TAMANHO}                           //*[@id="pa_size"]
 ${ESCOLHENDO_TAMANHO_MEDIUM}                    //*[@value="medium"]
 ${ESCOLHENDO_COR}                               //*[@id="pa_color"]
 ${ESCOLHENDO_COR_WHITE}                         //*[@value="white"]
+${SELECIONANDO_FOTOS_1}                         //*[@class="icon ion-ios-arrow-forward"]
+${VALIDAR_ADDICIONAL_INFO}                      //*[@class="additional_information_tab active"]
+${VALIDAR_ICONE_FACE}                           //*[@class="fa fa-facebook"]
+${VALIDAR_ICONE_TWITTER}                        //*[@class="fa fa-twitter"]
+${VALIDAR_ICONE_GOOGLE}                         //*[@class="fa fa-google-plus"]
+${VALIDAR_ICONE_PINTEREST}                      //*[@class="fa fa-pinterest"]
+${VALIDAR_PRODUTOS_RELACIONADOS}                //*[@class="title-related"]
+
 
 
 ***Keywords***
@@ -70,4 +78,22 @@ Então é apresentado as opções de escolha de cor E quando seleciono a cor é 
 
     Element Text Should Be      ${ESCOLHENDO_COR_WHITE}        White
 
-    
+Então é apresentado as informações adicionais
+
+    Element Text Should Be      ${VALIDAR_ADDICIONAL_INFO}        ADDITIONAL INFORMATION
+
+Então é apresentado os ícones das redes sociais
+
+
+    Element Should Be Enabled   ${VALIDAR_ICONE_FACE}
+
+    Element Should Be Enabled   ${VALIDAR_ICONE_TWITTER}
+
+    Element Should Be Enabled   ${VALIDAR_ICONE_GOOGLE} 
+
+    Element Should Be Enabled   ${VALIDAR_ICONE_PINTEREST} 
+
+
+Então é apresentado os produtos relacionados
+
+    Element Text Should Be      ${VALIDAR_PRODUTOS_RELACIONADOS}        RELATED PRODUCTS
