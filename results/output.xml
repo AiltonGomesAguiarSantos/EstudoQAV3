@@ -1,223 +1,342 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220824 23:07:13.279" rpa="false" schemaversion="3">
-<suite id="s1" name="Itens Shop" source="E:\EstudoQAV4\EstudoQAV3\test-case\itens_shop.robot">
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220829 20:48:38.025" rpa="false" schemaversion="3">
+<suite id="s1" name="Itens Shop" source="C:\padrinho\EstudoQAV3\test-case\itens_shop.robot">
 <kw name="Dado que o browser esteja aberto" library="resource" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>url:blank</arg>
 <arg>googlechrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220824 23:07:14.016" level="INFO">Opening browser 'googlechrome' to base url 'url:blank'.</msg>
-<status status="PASS" starttime="20220824 23:07:14.016" endtime="20220824 23:07:15.304"/>
+<msg timestamp="20220829 20:48:38.283" level="INFO">Opening browser 'googlechrome' to base url 'url:blank'.</msg>
+<status status="PASS" starttime="20220829 20:48:38.283" endtime="20220829 20:48:40.438"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:14.016" endtime="20220824 23:07:15.305"/>
+<status status="PASS" starttime="20220829 20:48:38.283" endtime="20220829 20:48:40.438"/>
 </kw>
 <test id="s1-t1" name="Cenário 1 - Confirmar se o produto é apresentado" line="12">
 <kw name="Dado que realizei a consulta de “Dress” no campo de pesquisa E apresentou produtos a serem escolhidos" library="validacao_itens_shopqa">
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220824 23:07:15.308" endtime="20220824 23:07:15.444"/>
+<status status="PASS" starttime="20220829 20:48:40.441" endtime="20220829 20:48:40.565"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>https://shop.demoqa.com/</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220824 23:07:15.445" level="INFO">Opening url 'https://shop.demoqa.com/'</msg>
-<status status="PASS" starttime="20220824 23:07:15.445" endtime="20220824 23:07:19.623"/>
+<msg timestamp="20220829 20:48:40.565" level="INFO">Opening url 'https://shop.demoqa.com/'</msg>
+<status status="PASS" starttime="20220829 20:48:40.565" endtime="20220829 20:48:45.204"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>ToolsQA Demo Site – ToolsQA – Demo E-Commerce Site</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220824 23:07:19.628" level="INFO">Page title is 'ToolsQA Demo Site – ToolsQA – Demo E-Commerce Site'.</msg>
-<status status="PASS" starttime="20220824 23:07:19.623" endtime="20220824 23:07:19.628"/>
+<msg timestamp="20220829 20:48:45.209" level="INFO">Page title is 'ToolsQA Demo Site – ToolsQA – Demo E-Commerce Site'.</msg>
+<status status="PASS" starttime="20220829 20:48:45.205" endtime="20220829 20:48:45.209"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${HOME_INPUT_SEARCH}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220824 23:07:19.628" endtime="20220824 23:07:19.650"/>
+<status status="PASS" starttime="20220829 20:48:45.209" endtime="20220829 20:48:45.232"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${HOME_INPUT_SEARCH}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220824 23:07:19.650" level="INFO">Clicking element '//*[@class="noo-search"]'.</msg>
-<status status="PASS" starttime="20220824 23:07:19.650" endtime="20220824 23:07:19.686"/>
+<msg timestamp="20220829 20:48:45.233" level="INFO">Clicking element '//*[@class="noo-search"]'.</msg>
+<status status="PASS" starttime="20220829 20:48:45.232" endtime="20220829 20:48:45.275"/>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>${HOME_INPUT_SEARCH_QA}</arg>
 <arg>TYPE AND PRESS ENTER TO SEARCH</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220824 23:07:19.687" level="INFO">Verifying element '//*[@class="note-search"]' contains exact text 'TYPE AND PRESS ENTER TO SEARCH'.</msg>
-<status status="PASS" starttime="20220824 23:07:19.687" endtime="20220824 23:07:19.719"/>
+<msg timestamp="20220829 20:48:45.275" level="INFO">Verifying element '//*[@class="note-search"]' contains exact text 'TYPE AND PRESS ENTER TO SEARCH'.</msg>
+<status status="PASS" starttime="20220829 20:48:45.275" endtime="20220829 20:48:45.302"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${HOME_INPUT_CONSULTA}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220824 23:07:19.720" endtime="20220824 23:07:19.741"/>
+<status status="PASS" starttime="20220829 20:48:45.302" endtime="20220829 20:48:45.328"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${HOME_INPUT_CONSULTA}</arg>
 <arg>Dress</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220824 23:07:19.742" level="INFO">Typing text 'Dress' into text field '//*[@class="form-control"]'.</msg>
-<status status="PASS" starttime="20220824 23:07:19.741" endtime="20220824 23:07:19.791"/>
+<msg timestamp="20220829 20:48:45.328" level="INFO">Typing text 'Dress' into text field '//*[@class="form-control"]'.</msg>
+<status status="PASS" starttime="20220829 20:48:45.328" endtime="20220829 20:48:45.384"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>none</arg>
 <arg>RETURN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220824 23:07:19.792" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
-<msg timestamp="20220824 23:07:19.792" level="INFO">Pressing special key RETURN to browser.</msg>
-<msg timestamp="20220824 23:07:19.792" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20220824 23:07:19.791" endtime="20220824 23:07:20.322"/>
+<msg timestamp="20220829 20:48:45.384" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg timestamp="20220829 20:48:45.384" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg timestamp="20220829 20:48:45.384" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220829 20:48:45.384" endtime="20220829 20:48:45.985"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:15.307" endtime="20220824 23:07:20.323"/>
+<status status="PASS" starttime="20220829 20:48:40.440" endtime="20220829 20:48:45.985"/>
 </kw>
 <kw name="Quando seleciono o produto" library="validacao_itens_shopqa">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${RESULTADOS_SELECIONAR_PRODUTO}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220824 23:07:20.323" level="INFO">Clicking element '//*[@href="https://shop.demoqa.com/product/white-milkmaid-hook-and-eye-bodycon-midi-dress/"]'.</msg>
-<status status="PASS" starttime="20220824 23:07:20.323" endtime="20220824 23:07:22.125"/>
+<msg timestamp="20220829 20:48:45.986" level="INFO">Clicking element '//*[@href="https://shop.demoqa.com/product/white-milkmaid-hook-and-eye-bodycon-midi-dress/"]'.</msg>
+<status status="PASS" starttime="20220829 20:48:45.986" endtime="20220829 20:48:47.419"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:20.323" endtime="20220824 23:07:22.125"/>
+<status status="PASS" starttime="20220829 20:48:45.986" endtime="20220829 20:48:47.420"/>
 </kw>
 <kw name="Então é apresentado as informações do produto" library="validacao_itens_shopqa">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>${ESPECIFICACAO_PRODUTO}</arg>
 <arg>a white midi dress in a milkmaid style featuring puff detail sleeves and split on the reverse.</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220824 23:07:22.127" level="INFO">Verifying element '//*[@class="product-essential__description"]' contains exact text 'a white midi dress in a milkmaid style featuring puff detail sleeves and split on the reverse.'.</msg>
-<status status="PASS" starttime="20220824 23:07:22.126" endtime="20220824 23:07:22.148"/>
+<msg timestamp="20220829 20:48:47.422" level="INFO">Verifying element '//*[@class="product-essential__description"]' contains exact text 'a white midi dress in a milkmaid style featuring puff detail sleeves and split on the reverse.'.</msg>
+<status status="PASS" starttime="20220829 20:48:47.421" endtime="20220829 20:48:47.480"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.126" endtime="20220824 23:07:22.148"/>
+<status status="PASS" starttime="20220829 20:48:47.421" endtime="20220829 20:48:47.482"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:15.305" endtime="20220824 23:07:22.149"/>
+<status status="PASS" starttime="20220829 20:48:40.439" endtime="20220829 20:48:47.482"/>
 </test>
 <test id="s1-t2" name="Cenário 3 - Escolhendo o tipo de tamanho do produto" line="20">
 <kw name="Quando clico na opção de tamanho" library="validacao_itens_shopqa">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ESCOLHENDO_TAMANHO}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220824 23:07:22.151" level="INFO">Clicking element '//*[@id="pa_size"]'.</msg>
-<status status="PASS" starttime="20220824 23:07:22.151" endtime="20220824 23:07:22.201"/>
+<msg timestamp="20220829 20:48:47.484" level="INFO">Clicking element '//*[@id="pa_size"]'.</msg>
+<status status="PASS" starttime="20220829 20:48:47.484" endtime="20220829 20:48:47.560"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ESCOLHENDO_TAMANHO_MEDIUM}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220824 23:07:22.202" level="INFO">Clicking element '//*[@value="medium"]'.</msg>
-<status status="PASS" starttime="20220824 23:07:22.201" endtime="20220824 23:07:22.254"/>
+<msg timestamp="20220829 20:48:47.561" level="INFO">Clicking element '//*[@value="medium"]'.</msg>
+<status status="PASS" starttime="20220829 20:48:47.560" endtime="20220829 20:48:47.596"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.151" endtime="20220824 23:07:22.255"/>
+<status status="PASS" starttime="20220829 20:48:47.484" endtime="20220829 20:48:47.596"/>
 </kw>
 <kw name="Então é apresentado as opções de escolha de tamanho" library="validacao_itens_shopqa">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>${ESCOLHENDO_TAMANHO_MEDIUM}</arg>
 <arg>Medium</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220824 23:07:22.256" level="INFO">Verifying element '//*[@value="medium"]' contains exact text 'Medium'.</msg>
-<status status="PASS" starttime="20220824 23:07:22.255" endtime="20220824 23:07:22.273"/>
+<msg timestamp="20220829 20:48:47.598" level="INFO">Verifying element '//*[@value="medium"]' contains exact text 'Medium'.</msg>
+<status status="PASS" starttime="20220829 20:48:47.597" endtime="20220829 20:48:47.622"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.255" endtime="20220824 23:07:22.273"/>
+<status status="PASS" starttime="20220829 20:48:47.597" endtime="20220829 20:48:47.622"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.150" endtime="20220824 23:07:22.274"/>
+<status status="PASS" starttime="20220829 20:48:47.484" endtime="20220829 20:48:47.623"/>
 </test>
 <test id="s1-t3" name="Cenário 2 - Escolhendo o tipo de cor do produto" line="27">
 <kw name="Quando clico na opção de cor" library="validacao_itens_shopqa">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ESCOLHENDO_COR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220824 23:07:22.276" level="INFO">Clicking element '//*[@id="pa_color"]'.</msg>
-<status status="PASS" starttime="20220824 23:07:22.276" endtime="20220824 23:07:22.340"/>
+<msg timestamp="20220829 20:48:47.625" level="INFO">Clicking element '//*[@id="pa_color"]'.</msg>
+<status status="PASS" starttime="20220829 20:48:47.624" endtime="20220829 20:48:47.742"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.275" endtime="20220824 23:07:22.340"/>
+<status status="PASS" starttime="20220829 20:48:47.624" endtime="20220829 20:48:47.742"/>
 </kw>
 <kw name="Então é apresentado as opções de escolha de cor E quando seleciono a cor é apresentado a foto com a cor escolhida" library="validacao_itens_shopqa">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ESCOLHENDO_COR_WHITE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220824 23:07:22.341" level="INFO">Clicking element '//*[@value="white"]'.</msg>
-<status status="PASS" starttime="20220824 23:07:22.341" endtime="20220824 23:07:22.414"/>
+<msg timestamp="20220829 20:48:47.744" level="INFO">Clicking element '//*[@value="white"]'.</msg>
+<status status="PASS" starttime="20220829 20:48:47.744" endtime="20220829 20:48:47.814"/>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>${ESCOLHENDO_COR_WHITE}</arg>
 <arg>White</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220824 23:07:22.414" level="INFO">Verifying element '//*[@value="white"]' contains exact text 'White'.</msg>
-<status status="PASS" starttime="20220824 23:07:22.414" endtime="20220824 23:07:22.448"/>
+<msg timestamp="20220829 20:48:47.817" level="INFO">Verifying element '//*[@value="white"]' contains exact text 'White'.</msg>
+<status status="PASS" starttime="20220829 20:48:47.815" endtime="20220829 20:48:47.856"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.340" endtime="20220824 23:07:22.448"/>
+<status status="PASS" starttime="20220829 20:48:47.743" endtime="20220829 20:48:47.856"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.275" endtime="20220824 23:07:22.449"/>
+<status status="PASS" starttime="20220829 20:48:47.624" endtime="20220829 20:48:47.857"/>
 </test>
-<test id="s1-t4" name="Cenário 5 - Informações adicionais" line="38">
+<test id="s1-t4" name="Cenário 4 - Navegando pelas fotos do produto" line="33">
+<kw name="Dado que o produto é visível na tela" library="validacao_itens_shopqa">
+<kw name="Dado que realizei a consulta de “Dress” no campo de pesquisa E apresentou produtos a serem escolhidos" library="validacao_itens_shopqa">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220829 20:48:47.858" endtime="20220829 20:48:47.860"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://shop.demoqa.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220829 20:48:47.861" level="INFO">Opening url 'https://shop.demoqa.com/'</msg>
+<status status="PASS" starttime="20220829 20:48:47.860" endtime="20220829 20:48:48.295"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>ToolsQA Demo Site – ToolsQA – Demo E-Commerce Site</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220829 20:48:48.304" level="INFO">Page title is 'ToolsQA Demo Site – ToolsQA – Demo E-Commerce Site'.</msg>
+<status status="PASS" starttime="20220829 20:48:48.295" endtime="20220829 20:48:48.304"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME_INPUT_SEARCH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220829 20:48:48.304" endtime="20220829 20:48:48.338"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_INPUT_SEARCH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 20:48:48.340" level="INFO">Clicking element '//*[@class="noo-search"]'.</msg>
+<status status="PASS" starttime="20220829 20:48:48.339" endtime="20220829 20:48:48.382"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${HOME_INPUT_SEARCH_QA}</arg>
+<arg>TYPE AND PRESS ENTER TO SEARCH</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220829 20:48:48.384" level="INFO">Verifying element '//*[@class="note-search"]' contains exact text 'TYPE AND PRESS ENTER TO SEARCH'.</msg>
+<status status="PASS" starttime="20220829 20:48:48.383" endtime="20220829 20:48:48.411"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME_INPUT_CONSULTA}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220829 20:48:48.411" endtime="20220829 20:48:48.429"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME_INPUT_CONSULTA}</arg>
+<arg>Dress</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220829 20:48:48.429" level="INFO">Typing text 'Dress' into text field '//*[@class="form-control"]'.</msg>
+<status status="PASS" starttime="20220829 20:48:48.429" endtime="20220829 20:48:48.478"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220829 20:48:48.478" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg timestamp="20220829 20:48:48.478" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg timestamp="20220829 20:48:48.478" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220829 20:48:48.478" endtime="20220829 20:48:48.910"/>
+</kw>
+<status status="PASS" starttime="20220829 20:48:47.858" endtime="20220829 20:48:48.911"/>
+</kw>
+<kw name="Quando seleciono o produto" library="validacao_itens_shopqa">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${RESULTADOS_SELECIONAR_PRODUTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 20:48:48.915" level="INFO">Clicking element '//*[@href="https://shop.demoqa.com/product/white-milkmaid-hook-and-eye-bodycon-midi-dress/"]'.</msg>
+<status status="PASS" starttime="20220829 20:48:48.913" endtime="20220829 20:48:49.415"/>
+</kw>
+<status status="PASS" starttime="20220829 20:48:48.912" endtime="20220829 20:48:49.416"/>
+</kw>
+<status status="PASS" starttime="20220829 20:48:47.858" endtime="20220829 20:48:49.416"/>
+</kw>
+<kw name="Quando clico nas opções de fotos do produto" library="validacao_itens_shopqa">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@class="noo-woo-thumbnails__slide noo-woo-thumbnails__slide--active"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 20:48:49.420" level="INFO">Clicking element '//*[@class="noo-woo-thumbnails__slide noo-woo-thumbnails__slide--active"]'.</msg>
+<status status="PASS" starttime="20220829 20:48:49.419" endtime="20220829 20:48:49.560"/>
+</kw>
+<status status="PASS" starttime="20220829 20:48:49.418" endtime="20220829 20:48:49.560"/>
+</kw>
+<kw name="Então são apresentados as imagens das fotos selecionadas" library="validacao_itens_shopqa">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ITENS_SHOP_IMAGEM_3}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 20:48:49.561" level="INFO">Clicking element 'xpath=(//*[@class="noo-woo-thumbnails__image"])[3]'.</msg>
+<status status="PASS" starttime="20220829 20:48:49.561" endtime="20220829 20:48:49.642"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ITENS_SHOP_IMAGEM_3}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220829 20:48:49.642" endtime="20220829 20:48:49.674"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ITENS_SHOP_IMAGEM_2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 20:48:49.674" level="INFO">Clicking element 'xpath=(//*[@class="noo-woo-thumbnails__image"])[2]'.</msg>
+<status status="PASS" starttime="20220829 20:48:49.674" endtime="20220829 20:48:49.727"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ITENS_SHOP_IMAGEM_1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 20:48:49.728" level="INFO">Clicking element 'xpath=(//*[@class="noo-woo-thumbnails__image"])[1]'.</msg>
+<status status="PASS" starttime="20220829 20:48:49.728" endtime="20220829 20:48:49.770"/>
+</kw>
+<status status="PASS" starttime="20220829 20:48:49.561" endtime="20220829 20:48:49.770"/>
+</kw>
+<status status="PASS" starttime="20220829 20:48:47.858" endtime="20220829 20:48:49.771"/>
+</test>
+<test id="s1-t5" name="Cenário 5 - Informações adicionais" line="38">
 <kw name="Então é apresentado as informações adicionais" library="validacao_itens_shopqa">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>${VALIDAR_ADDICIONAL_INFO}</arg>
 <arg>ADDITIONAL INFORMATION</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220824 23:07:22.451" level="INFO">Verifying element '//*[@class="additional_information_tab active"]' contains exact text 'ADDITIONAL INFORMATION'.</msg>
-<status status="PASS" starttime="20220824 23:07:22.451" endtime="20220824 23:07:22.473"/>
+<msg timestamp="20220829 20:48:49.773" level="INFO">Verifying element '//*[@class="additional_information_tab active"]' contains exact text 'ADDITIONAL INFORMATION'.</msg>
+<status status="PASS" starttime="20220829 20:48:49.773" endtime="20220829 20:48:49.805"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.451" endtime="20220824 23:07:22.473"/>
+<status status="PASS" starttime="20220829 20:48:49.773" endtime="20220829 20:48:49.805"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.450" endtime="20220824 23:07:22.474"/>
+<status status="PASS" starttime="20220829 20:48:49.772" endtime="20220829 20:48:49.807"/>
 </test>
-<test id="s1-t5" name="Cenário 6 - Opções de compartilhamento do produto nas redes sociais" line="42">
+<test id="s1-t6" name="Cenário 6 - Opções de compartilhamento do produto nas redes sociais" line="42">
 <kw name="Então é apresentado os ícones das redes sociais" library="validacao_itens_shopqa">
 <kw name="Element Should Be Enabled" library="SeleniumLibrary">
 <arg>${VALIDAR_ICONE_FACE}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220824 23:07:22.478" endtime="20220824 23:07:22.507"/>
+<status status="PASS" starttime="20220829 20:48:49.809" endtime="20220829 20:48:49.861"/>
 </kw>
 <kw name="Element Should Be Enabled" library="SeleniumLibrary">
 <arg>${VALIDAR_ICONE_TWITTER}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220824 23:07:22.507" endtime="20220824 23:07:22.534"/>
+<status status="PASS" starttime="20220829 20:48:49.861" endtime="20220829 20:48:49.896"/>
 </kw>
 <kw name="Element Should Be Enabled" library="SeleniumLibrary">
 <arg>${VALIDAR_ICONE_GOOGLE}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220824 23:07:22.534" endtime="20220824 23:07:22.558"/>
+<status status="PASS" starttime="20220829 20:48:49.896" endtime="20220829 20:48:49.928"/>
 </kw>
 <kw name="Element Should Be Enabled" library="SeleniumLibrary">
 <arg>${VALIDAR_ICONE_PINTEREST}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220824 23:07:22.558" endtime="20220824 23:07:22.586"/>
+<status status="PASS" starttime="20220829 20:48:49.928" endtime="20220829 20:48:49.953"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.477" endtime="20220824 23:07:22.586"/>
+<status status="PASS" starttime="20220829 20:48:49.809" endtime="20220829 20:48:49.953"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.476" endtime="20220824 23:07:22.587"/>
+<status status="PASS" starttime="20220829 20:48:49.808" endtime="20220829 20:48:49.954"/>
 </test>
-<test id="s1-t6" name="Cenário 7 - Apresentado itens relacionados" line="46">
+<test id="s1-t7" name="Cenário 7 - Apresentado itens relacionados" line="46">
 <kw name="Então é apresentado os produtos relacionados" library="validacao_itens_shopqa">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>${VALIDAR_PRODUTOS_RELACIONADOS}</arg>
 <arg>RELATED PRODUCTS</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220824 23:07:22.589" level="INFO">Verifying element '//*[@class="title-related"]' contains exact text 'RELATED PRODUCTS'.</msg>
-<status status="PASS" starttime="20220824 23:07:22.589" endtime="20220824 23:07:22.609"/>
+<msg timestamp="20220829 20:48:49.957" level="INFO">Verifying element '//*[@class="title-related"]' contains exact text 'RELATED PRODUCTS'.</msg>
+<status status="PASS" starttime="20220829 20:48:49.957" endtime="20220829 20:48:49.978"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.588" endtime="20220824 23:07:22.610"/>
+<status status="PASS" starttime="20220829 20:48:49.956" endtime="20220829 20:48:49.979"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.588" endtime="20220824 23:07:22.611"/>
+<status status="PASS" starttime="20220829 20:48:49.956" endtime="20220829 20:48:49.979"/>
 </test>
 <kw name="Fechar Navegador" library="resource" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220824 23:07:22.612" endtime="20220824 23:07:24.831"/>
+<status status="PASS" starttime="20220829 20:48:49.983" endtime="20220829 20:48:52.495"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:22.612" endtime="20220824 23:07:24.831"/>
+<status status="PASS" starttime="20220829 20:48:49.983" endtime="20220829 20:48:52.495"/>
 </kw>
-<status status="PASS" starttime="20220824 23:07:13.281" endtime="20220824 23:07:24.831"/>
+<status status="PASS" starttime="20220829 20:48:38.027" endtime="20220829 20:48:52.495"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="0" skip="0">All Tests</stat>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="6" fail="0" skip="0" id="s1" name="Itens Shop">Itens Shop</stat>
+<stat pass="7" fail="0" skip="0" id="s1" name="Itens Shop">Itens Shop</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20220829 20:48:38.275" level="ERROR">Error in file 'C:\padrinho\EstudoQAV3\resource\po\validacao_itens_shopqa.robot' on line 3: Importing library 'FakerLibrary' failed: ModuleNotFoundError: No module named 'pkg_resources'
+Traceback (most recent call last):
+  File "C:\Users\4024962\AppData\Local\Programs\Python\Python310\lib\site-packages\FakerLibrary\__init__.py", line 1, in &lt;module&gt;
+    import pkg_resources
+PYTHONPATH:
+  C:\Users\4024962\AppData\Local\Programs\Python\Python310\Scripts\robot.exe
+  C:\Users\4024962\AppData\Local\Programs\Python\Python310\python310.zip
+  C:\Users\4024962\AppData\Local\Programs\Python\Python310\DLLs
+  C:\Users\4024962\AppData\Local\Programs\Python\Python310\lib
+  C:\Users\4024962\AppData\Local\Programs\Python\Python310
+  C:\Users\4024962\AppData\Local\Programs\Python\Python310\lib\site-packages</msg>
 </errors>
 </robot>

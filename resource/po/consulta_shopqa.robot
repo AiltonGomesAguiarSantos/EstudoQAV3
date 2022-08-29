@@ -56,3 +56,4 @@ Dado que apresentou a opção para digitar o produto a ser consultado
     Dado que estou na tela principal do site
     Quando clico na opção de Search
     Então é apresentado a opção para digitar o produto a ser consultado
+

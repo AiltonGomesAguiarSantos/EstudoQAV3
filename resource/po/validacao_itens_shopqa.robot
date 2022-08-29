@@ -22,8 +22,10 @@ ${VALIDAR_ICONE_TWITTER}                        //*[@class="fa fa-twitter"]
 ${VALIDAR_ICONE_GOOGLE}                         //*[@class="fa fa-google-plus"]
 ${VALIDAR_ICONE_PINTEREST}                      //*[@class="fa fa-pinterest"]
 ${VALIDAR_PRODUTOS_RELACIONADOS}                //*[@class="title-related"]
-
-
+${ITENS_SHOP_IMAGEM_4}                          //*[@class="noo-woo-thumbnails__slide noo-woo-thumbnails__slide--active"]
+${ITENS_SHOP_IMAGEM_3}                          xpath=(//*[@class="noo-woo-thumbnails__image"])[3]
+${ITENS_SHOP_IMAGEM_2}                          xpath=(//*[@class="noo-woo-thumbnails__image"])[2]
+${ITENS_SHOP_IMAGEM_1}                          xpath=(//*[@class="noo-woo-thumbnails__image"])[1]
 
 ***Keywords***
 
@@ -97,3 +99,19 @@ Então é apresentado os ícones das redes sociais
 Então é apresentado os produtos relacionados
 
     Element Text Should Be      ${VALIDAR_PRODUTOS_RELACIONADOS}        RELATED PRODUCTS
+
+Quando clico nas opções de fotos do produto
+    Click Element    //*[@class="noo-woo-thumbnails__slide noo-woo-thumbnails__slide--active"]
+
+
+Dado que o produto é visível na tela
+    Dado que realizei a consulta de “Dress” no campo de pesquisa E apresentou produtos a serem escolhidos
+    Quando seleciono o produto
+
+Então são apresentados as imagens das fotos selecionadas
+    Wait Until Element Is Visible     ${ITENS_SHOP_IMAGEM_3} 
+    Click Element    ${ITENS_SHOP_IMAGEM_3} 
+    Wait Until Element Is Visible     ${ITENS_SHOP_IMAGEM_2}
+    Click Element    ${ITENS_SHOP_IMAGEM_2} 
+    Wait Until Element Is Visible     ${ITENS_SHOP_IMAGEM_1} 
+    Click Element    ${ITENS_SHOP_IMAGEM_1} 
