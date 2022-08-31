@@ -18,14 +18,13 @@ Cenário 1 - Confirmar se o produto é apresentado
     Então é apresentado as informações do produto
 
 Cenário 3 - Escolhendo o tipo de tamanho do produto
-
+    Dado que o produto é visível na tela
     Quando clico na opção de tamanho
-
     Então é apresentado as opções de escolha de tamanho
 
 
 Cenário 2 - Escolhendo o tipo de cor do produto
-
+    Dado que o produto é visível na tela
     Quando clico na opção de cor
 
     Então é apresentado as opções de escolha de cor E quando seleciono a cor é apresentado a foto com a cor escolhida
@@ -36,13 +35,17 @@ Cenário 4 - Navegando pelas fotos do produto
     Então são apresentados as imagens das fotos selecionadas
 
 Cenário 5 - Informações adicionais 
-
+    Dado que o produto é visível na tela
+    Quando vou até o final das informações do produto
     Então é apresentado as informações adicionais
 
 Cenário 6 - Opções de compartilhamento do produto nas redes sociais
-
+    Dado que o produto é visível na tela
+    Quando vou baixando a página 
     Então é apresentado os ícones das redes sociais
 
 Cenário 7 - Apresentado itens relacionados
 
+    Dado que o produto é visível na tela
+    Quando vou baixando a página
     Então é apresentado os produtos relacionados

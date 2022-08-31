@@ -59,6 +59,7 @@ Então é apresentado as informações do produto
 
     Element Text Should Be          ${ESPECIFICACAO_PRODUTO}    a white midi dress in a milkmaid style featuring puff detail sleeves and split on the reverse.
 
+
 Quando clico na opção de tamanho
 
     Click Element       ${ESCOLHENDO_TAMANHO} 
@@ -79,6 +80,12 @@ Então é apresentado as opções de escolha de cor E quando seleciono a cor é 
     Click Element       ${ESCOLHENDO_COR_WHITE}
 
     Element Text Should Be      ${ESCOLHENDO_COR_WHITE}        White
+
+Quando vou até o final das informações do produto
+    Dado que o produto é visível na tela
+
+Quando vou baixando a página
+    Dado que o produto é visível na tela
 
 Então é apresentado as informações adicionais
 
