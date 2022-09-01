@@ -57,13 +57,14 @@ Quando seleciono o produto
 
 Então é apresentado as informações do produto
 
+    Wait Until Page Contains Element        ${RESULTADOS_SELECIONAR_PRODUTO}
     Element Text Should Be          ${ESPECIFICACAO_PRODUTO}    a white midi dress in a milkmaid style featuring puff detail sleeves and split on the reverse.
 
 
 Quando clico na opção de tamanho
 
     Click Element       ${ESCOLHENDO_TAMANHO} 
-
+    
     Click Element       ${ESCOLHENDO_TAMANHO_MEDIUM}
 
 Então é apresentado as opções de escolha de tamanho
